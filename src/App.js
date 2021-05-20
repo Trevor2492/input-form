@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './components/Form';
+import Input from './components/Input';
+import {useState} from 'react'
 
 function App() {
+
+  const [address, setAddress] = useState('')
+  const [subject, setSubject] = useState('')
+  const [body, setBody] = useState('')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Input 
+        address={address}
+        setAddress={setAddress}
+        subject={subject}
+        setSubject={setSubject}
+        body={body}
+        setBody={setBody}
+      />
+      <Form/>
     </div>
   );
 }
